@@ -49,9 +49,9 @@ public class LC_0685_RedundantConnection_II {
             parent[i] = i;
         }
         for (int i = 0; i < edges.length; i++) {
-            if (edges[i][1] == 0) {
-                continue;
-            }
+//            if (edges[i][1] == 0) {
+//                continue;
+//            }
             int father = edges[i][0], child = edges[i][1];
             if (findRoot(parent, father) == child) {// found circle
                 if (can1[0] == -1) {//no nodes have 2 parents
