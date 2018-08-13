@@ -30,15 +30,18 @@ public class LC_310_MinimumHeightTrees {
         if (n == 1) {
             return Collections.singletonList(0);
         }
+        // for each node, create an adjacent node set
         List<Set<Integer>> adj = new ArrayList<>(n);
         for (int i = 0; i < n; ++i){
             adj.add(new HashSet<>()); //create n empty sets
         }
+        // use edges information to fill in adjacent node sets
         for (int[] edge : edges) {//undirected graph
             adj.get(edge[0]).add(edge[1]);
             adj.get(edge[1]).add(edge[0]);
         }
 
+        // find all leaves
         List<Integer> leaves = new ArrayList<>();
         for (int i = 0; i < n; ++i){
             if (adj.get(i).size() == 1){
@@ -46,6 +49,7 @@ public class LC_310_MinimumHeightTrees {
             }
         }
         
+        // iteratively remove leaves until 1 or 2 node left
         while (n > 2) {
             n -= leaves.size();
             List<Integer> newLeaves = new ArrayList<>();
