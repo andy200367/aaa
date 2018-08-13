@@ -6,10 +6,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class LC_310_MinimumHeightTrees {
+public class LC_0310_MinimumHeightTrees {
 
     public static void main(String[] args) {
-        LC_310_MinimumHeightTrees cls = new LC_310_MinimumHeightTrees();
+        LC_0310_MinimumHeightTrees cls = new LC_0310_MinimumHeightTrees();
         int[][] edges = new int[][] { { 1, 0 }, { 1, 2 }, { 1, 3 } };
         List<Integer> res = cls.findMinHeightTrees(4, edges);
         System.out.println(res.toString()); // [1]
